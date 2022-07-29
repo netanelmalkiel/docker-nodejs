@@ -1,6 +1,8 @@
-const express = require('express')
+import express from 'express'
+import os from 'os'
+
 const app = express()
-const port = 3000
+const PORT = 3000
 
 app.get('/', (req, res) => res.json([
     {
@@ -17,6 +19,6 @@ app.get('/', (req, res) => res.json([
     }
 ]))
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.listen(PORT, () => {
+    console.log('web server is listening at port ${PORT}')
 })

@@ -1,6 +1,7 @@
 FROM node:alpine
 WORKDIR /app
-ADD package*.json ./
+EXPOSE 3000
+COPY package.json package-lock.json ./
 RUN npm install
-ADD . .
-CMD node index.js
+COPY . .
+CMD ["npm", "start"]
